@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { db } from './db';
-import type { Support } from '@types/index';
+import type { Support } from '@/types';
 
 export const useSaveSupport = () => {
   return useCallback(async (support: Support) => {
