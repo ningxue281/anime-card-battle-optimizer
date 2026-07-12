@@ -1,5 +1,5 @@
 import Dexie, { Table } from 'dexie';
-import type { Card, Trait, Support, Team, BattleLog } from '@types/index';
+import type { Card, Trait, Support, Team, BattleLog } from '@/types';
 
 export class AnimeBattleDB extends Dexie {
   cards!: Table<Card>;
