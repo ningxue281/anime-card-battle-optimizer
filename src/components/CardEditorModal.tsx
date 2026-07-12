@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import type { Card, BorderRarityKey } from '@types/index';
-import { BORDER_RARITIES, BORDER_RARITY_LABELS } from '@types/index';
+import type { Card, BorderRarityKey } from '@/types';
+import { BORDER_RARITIES, BORDER_RARITY_LABELS } from '@/types';
 import ImagePicker from './ImagePicker';
 
 interface CardEditorModalProps {
@@ -46,7 +46,7 @@ export default function CardEditorModal({
     });
   };
 
-  const handleRarityChange = (field: string, value: string | number) => {
+  const handleRarityChange = (field: keyof Card['borderRarities']['base'], value: string | number) => {
     setEditingCard({
       ...editingCard,
       borderRarities: {
