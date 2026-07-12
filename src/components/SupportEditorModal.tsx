@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import type { Support } from '@types/index';
+import type { Support } from '@/types';
 import ImagePicker from './ImagePicker';
 
 interface SupportEditorModalProps {
@@ -135,7 +135,7 @@ export default function SupportEditorModal({
               Notes
             </label>
             <textarea
-              value={'notes' in editingSupport ? (editingSupport.notes || '') : ''}
+              value={editingSupport.notes ?? ''}
               onChange={(e) => handleFieldChange('notes', e.target.value)}
               className="input-field resize-none"
               rows={3}
