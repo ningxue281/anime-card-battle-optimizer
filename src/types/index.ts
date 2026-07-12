@@ -1,6 +1,6 @@
 // Card Types
 export interface BorderRarityStats {
-  artwork: string;
+  artwork: string; // Base64 encoded image
   hp: number;
   damage: number;
   abilityDescription: string;
@@ -11,8 +11,9 @@ export interface BorderRarityStats {
 export interface Card {
   id: string;
   name: string;
-  artwork: string;
+  animeName?: string;
   notes: string;
+  tags: string[];
   borderRarities: {
     base: BorderRarityStats;
     gold: BorderRarityStats;
@@ -26,6 +27,24 @@ export interface Card {
 }
 
 export type BorderRarityKey = 'base' | 'gold' | 'magmatic' | 'abyssal' | 'mystic' | 'chronicle';
+
+export const BORDER_RARITIES: BorderRarityKey[] = [
+  'base',
+  'gold',
+  'magmatic',
+  'abyssal',
+  'mystic',
+  'chronicle',
+];
+
+export const BORDER_RARITY_LABELS: Record<BorderRarityKey, string> = {
+  base: 'Base',
+  gold: 'Gold',
+  magmatic: 'Magmatic',
+  abyssal: 'Abyssal',
+  mystic: 'Mystic',
+  chronicle: 'Chronicle',
+};
 
 // Trait Types
 export interface Trait {
