@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const { sidebarOpen, toggleSidebar } = useUIStore();
+  const { sidebarOpen, toggleSidebar, closeSidebar } = useUIStore();
 
   return (
     <div className="flex h-screen bg-dark-900">
@@ -25,7 +25,7 @@ export default function Layout({ children }: LayoutProps) {
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black/50 lg:hidden z-40"
-          onClick={() => useUIStore.setState({ sidebarOpen: false })}
+          onClick={() => closeSidebar()}
         />
       )}
 
